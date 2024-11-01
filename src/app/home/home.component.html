@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<section class="containerAll">
+
+    
+    <div>
+
+        <button type="button" (click)="all()" class="buttonStyle text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">All</button>
+        <button type="button" class="buttonStyle text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Landscapes</button>
+        <button type="button" class="buttonStyle text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Games</button>
+        <button type="button" class="buttonStyle text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Emo</button>
+    </div>
+
+</section>
+
+<section class="containerImgAll">
+
+    @for (item of dataAll; track item._id) {
+        
+        <div class="containerImg">
+            
+            @if(item.favorite == "no") {
+
+           
+            <img class="heart" (click)="favorite(item._id)" src="/icons/heart.png" alt="">
+        } @else {
+            
+            <img class="heart" (click)="favoriteBack(item._id)" src="/icons/heart2.png" alt="">
+
+        }
+
+            <img class="imgStyle"  src="{{item.url}}" alt="">
+        
+        </div>
+
+        }
+  
+
+
+</section>

@@ -1,0 +1,25 @@
+$nav: 2px solid #00b594;
+$icon: 200px;
+$color: #00b594;
+
+.navStyle {
+
+    border-bottom: $nav;
+
+}
+
+.iconStyle {
+
+    border: 2px solid black;
+    border-radius: $icon;
+    padding: 3px;
+}
+
+.spanStyle {
+
+    color: $color;
+    font-weight: 900;
+    position: relative;
+    left: 0;
+
+}

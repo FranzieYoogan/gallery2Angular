@@ -1,0 +1,66 @@
+.containerAll {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+
+}
+
+@mixin buttons {
+
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.buttonStyle {
+
+    @include buttons;
+
+}
+
+.buttonStyle:hover, .buttonStyle:active, .buttonStyle:focus {
+
+    background-color: black;
+    box-shadow: none;
+
+}
+
+.imgStyle {
+
+    width: 300px;
+    border: 2px solid white;
+
+    border-radius: 10px;
+}
+
+.containerImg {
+
+    position: relative;
+
+}
+
+.heart {
+
+    position: absolute;
+    width: 50px;
+    left: 1em;
+    top: 0.3em;
+    z-index: 60;
+}
+
+.heart:hover {
+
+    cursor: pointer;
+
+}
+
+.containerImgAll {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 2em;
+
+}
