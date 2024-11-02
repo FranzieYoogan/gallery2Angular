@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 // MongoDB connection URL
-const url = 'mongodb+srv://franzieyoogan2:admin357159@cluster0.guw8a4s.mongodb.net/';
+const url = 'kluster';
 const dbName = 'gallery2';
 let db;
 
