@@ -17,6 +17,12 @@ export class SharedService {
 
   }
 
+  getDataSpecific(type:string):Observable<any[]> {
+
+    return this.http.get<any[]>(`http://localhost:3000/gallery2/${type}`)
+
+  }
+
   update(id:string,body:any):Observable<any> {
 
    return this.http.put(`http://localhost:3000/gallery2/${id}`,body)
