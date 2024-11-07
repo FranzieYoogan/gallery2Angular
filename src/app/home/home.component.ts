@@ -25,6 +25,14 @@ export class HomeComponent {
 
     const containerGames:any = document.getElementById('containerGames');
 
+    const containerEmo: HTMLElement | null = document.getElementById('containerEmo');
+
+  if(containerEmo) {
+
+    containerEmo.style.display = "none";
+
+  }
+
     containerGames.style.display = "none";
 
     containerLandscapes.style.display = "none";
@@ -142,6 +150,14 @@ landscapes() {
 
   const containerGames:any = document.getElementById('containerGames');
 
+  const containerEmo: HTMLElement | null = document.getElementById('containerEmo');
+
+  if(containerEmo) {
+
+    containerEmo.style.display = "none";
+
+  }
+
   containerGames.style.display = "none";
 
   containerLandscapes.style.display = "grid";
@@ -166,6 +182,13 @@ landscapes() {
     const containerAll: HTMLElement | null = document.getElementById('containerAll');
     const containerLandscapes: HTMLElement | null = document.getElementById('containerLandscapes');
     const containerGames: HTMLElement | null = document.getElementById('containerGames');
+    const containerEmo: HTMLElement | null = document.getElementById('containerEmo');
+
+    if(containerEmo) {
+
+      containerEmo.style.display = "none";
+
+    }
 
     // Check if containerGames is not null before trying to manipulate it
     if (containerGames) {
@@ -192,8 +215,66 @@ landscapes() {
     });
 }
 
+dataEmo:any 
+  emo() {
+    const containerAll: HTMLElement | null = document.getElementById('containerAll');
+    const containerLandscapes: HTMLElement | null = document.getElementById('containerLandscapes');
+    const containerGames: HTMLElement | null = document.getElementById('containerGames');
+    const containerEmo: HTMLElement | null = document.getElementById('containerEmo');
+    const empty:any = document.getElementById('empty');
+
+    if(containerEmo) {
+
+      containerEmo.style.display = "flex";
+
+    }
+
+    // Check if containerGames is not null before trying to manipulate it
+    if (containerGames) {
+        containerGames.style.display = "none";
+    } else {
+        console.error("containerGames not found");
+    }
+
+    if (containerLandscapes) {
+        containerLandscapes.style.display = "none";
+    } else {
+        console.error("containerLandscapes not found");
+    }
+
+    if (containerAll) {
+        containerAll.style.display = "none";
+    } else {
+        console.error("containerAll not found");
+    }
+
+    this.shared.getDataSpecific("emo").subscribe((configEmo) => {
+        console.log("Emo Data:", configEmo);
+        this.dataEmo = configEmo;
 
 
 
+          empty.style.display = "none"
+
+    
+
+      
+
+        
+
+    }, error => {
+
+      console.log("fetching empty", error)
+      empty.style.display = "block"
+
+    });
+
+   
+
+    }
 
 }
+
+
+
+
